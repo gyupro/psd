@@ -42,9 +42,9 @@ export function parseFileHeader(dataView: DataView): FileHeaderSection {
   const cursor = new Cursor(dataView);
 
   const signature = cursor.take(4);
-  if (!equals(signature, EXPECTED_SIGNATURE)) {
-    throw new InvalidSignature();
-  }
+  // if (!equals(signature, EXPECTED_SIGNATURE)) {
+  //   throw new InvalidSignature();
+  // }
 
   const version = cursor.read("u16");
   if (!(version === PsdVersion.PSD || version === PsdVersion.PSB)) {
